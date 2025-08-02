@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,24 +11,39 @@
   <script type="module" src="supabase.js"></script>
   <script type="module" src="report.js"></script>
   <script type="module" src="logout.js"></script>
+  <style>
+    /* Custom colors using Tailwind's arbitrary value syntax */
+    .bg-ffbccd {
+      background-color: #FFBCCD;
+    }
+
+    .bg-fc809f {
+      background-color: #FC809F;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-inter">
-  <nav class="bg-blue-700 p-4 flex justify-between text-white">
-    <h1 class="text-xl font-bold">Laporan Keuangan</h1>
+
+<body class="bg-white font-inter">
+  <nav class="bg-ffbccd p-4 flex justify-between text-white">
+    <h1 class="text-xl font-bold text-black">Laporan Keuangan</h1>
     <div>
-      <button id="nav-transactions" class="mx-2">Transaksi</button>
-      <button id="logout" class="mx-2 bg-red-600 px-3 py-1 rounded hover:bg-red-700">Logout</button>
+      <button id="nav-transactions"
+        class="mx-2 bg-fc809f text-white font-bold px-3 py-1 rounded hover:bg-fc809f/80">Transaksi</button>
+      <button id="logout" class="mx-2 bg-red-600 text-white font-bold px-3 py-1 rounded hover:bg-red-700">Logout</button>
     </div>
   </nav>
 
+
+
   <main class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
-    <h2 class="text-2xl font-bold mb-4 text-indigo-700">Laporan Keuangan</h2>
+    <h2 class="text-2xl font-bold mb-4 text-black">Laporan Keuangan</h2>
     <div class="mb-6">
-      <label for="monthFilter" class="mr-2 font-semibold">Pilih Bulan:</label>
+      <label for="monthFilter" class="mr-2 font-bold text-black">Pilih Bulan:</label>
       <select id="monthFilter" class="p-2 border rounded"></select>
     </div>
     <canvas id="reportChart" class="mb-6"></canvas>
     <ul id="report-container" class="space-y-2"></ul>
   </main>
 </body>
+
 </html>
