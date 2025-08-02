@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catatan Keuangan Kita❤️</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script type="module" src="supabase.js"></script>
+  <script type="module" src="tracker.js"></script>
+  <script type="module" src="logout.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <nav class="bg-blue-700 p-4 flex justify-between text-white">
+    <h1 class="text-xl font-bold">Catatan Keuangan Kita❤️</h1>
+    <div>
+      <button id="nav-reports" class="mx-2">Laporan Bulanan</button>
+      <button id="logout" class="mx-2 bg-red-600 px-3 py-1 rounded hover:bg-red-700">Logout</button>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto mt-6">
+    <section id="transaction-section" class="p-6">
+      <div class="max-w-xl mx-auto bg-white shadow rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Tambah Transaksi</h2>
+        <form id="transaction-form" class="space-y-4">
+          <input type="text" id="description" placeholder="Masukkan nama barang" required class="w-full p-2 border rounded" />
+          <input type="number" id="amount" placeholder="Masukkan Jumlah" step="0.01" required class="w-full p-2 border rounded" />
+          <input type="number" id="price" placeholder="Masukkan Harga" step="0.01" required class="w-full p-2 border rounded" />
+          <select id="type" required class="w-full p-2 border rounded">
+            <option value="income">Pemasukan</option>
+            <option value="expense">Pengeluaran</option>
+          </select>
+          <input type="date" id="date" required class="w-full p-2 border rounded" />
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Tambah Transaksi</button>
+        </form>
+      </div>
+      <div class="max-w-xl mx-auto mt-6">
+        <h2 class="text-2xl font-semibold mb-4">Catatan Keuangan</h2>
+        <p id="balance-display" class="text-lg mb-4"></p>
+        <ul id="transaction-list" class="bg-white shadow rounded-lg p-4"></ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

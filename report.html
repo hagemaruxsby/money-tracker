@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laporan Keuangan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="supabase.js"></script>
+  <script type="module" src="report.js"></script>
+  <script type="module" src="logout.js"></script>
+</head>
+<body class="bg-gray-100 font-inter">
+  <nav class="bg-blue-700 p-4 flex justify-between text-white">
+    <h1 class="text-xl font-bold">Laporan Keuangan</h1>
+    <div>
+      <button id="nav-transactions" class="mx-2">Transaksi</button>
+      <button id="logout" class="mx-2 bg-red-600 px-3 py-1 rounded hover:bg-red-700">Logout</button>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold mb-4 text-indigo-700">Laporan Keuangan</h2>
+    <div class="mb-6">
+      <label for="monthFilter" class="mr-2 font-semibold">Pilih Bulan:</label>
+      <select id="monthFilter" class="p-2 border rounded"></select>
+    </div>
+    <canvas id="reportChart" class="mb-6"></canvas>
+    <ul id="report-container" class="space-y-2"></ul>
+  </main>
+</body>
+</html>
