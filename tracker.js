@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const { data, error } = await supabase.auth.getUser();
   if (error || !data.user || !data.user.email_confirmed_at) {
     console.error("User not authenticated or email not confirmed:", error);
-    window.location.href = '/index.html';
+    window.location.href = './index.html';
     return;
   }
   await loadTransactions(data.user.id);
@@ -19,7 +19,7 @@ reportsBtn.addEventListener('click', async () => {
   const { data, error } = await supabase.auth.getUser();
   if (error || !data.user || !data.user.email_confirmed_at) {
     console.error("User not authenticated or email not confirmed:", error);
-    window.location.href = '/index.html';
+    window.location.href = './index.html';
     return;
   }
   window.location.href = './report.html';
@@ -45,7 +45,7 @@ transactionForm.addEventListener('submit', async (e) => {
   const { data, error: authError } = await supabase.auth.getUser();
   if (authError || !data.user || !data.user.email_confirmed_at) {
     alert('User not authenticated or email not confirmed.');
-    window.location.href = '/index.html';
+    window.location.href = './index.html';
     return;
   }
 
