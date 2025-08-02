@@ -120,7 +120,7 @@ async function loadTransactions(userId) {
     else if (tx.type === 'expense') balance -= tx.amount;
   });
 
-  balanceDisplay.textContent = `Balance: Rp${balance.toLocaleString('id-ID')}`;
+  balanceDisplay.textContent = `Saldo: Rp${balance.toLocaleString('id-ID')}`;
   balanceDisplay.className = `text-lg mb-4 ${balance < 0 ? 'text-red-600' : 'text-green-600'}`;
 
   const removeButtons = document.querySelectorAll('.remove-btn');
