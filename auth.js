@@ -31,7 +31,7 @@ async function handleRegister() {
       email,
       password,
       options: {
-        emailRedirectTo: 'https://hagemaruxsby.github.io/money-tracker/transactions.html' // Add this
+        emailRedirectTo: 'https://hagemaruxsby.github.io/money-tracker/index.html' // redirect after email confirmation
       }
     });
 
