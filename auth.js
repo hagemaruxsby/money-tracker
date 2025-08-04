@@ -50,3 +50,4 @@ async function handleRegister() {
     registerBtn.disabled = false;
   }
 }
+
