@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       setAuthMessage('Login successful!', false);
-      window.location.href = '/money-tracker/transactions.html';
+      window.location.href = 'https://hagemaruxsby.github.io/money-tracker/transactions.html';
     } catch (err) {
       console.error('Unexpected login error:', err);
-      setAuthMessage('An unexpected error occurred.');
+      setAuthMessage('An unexpected error occurred: ' + err.message);
       loginBtn.disabled = false;
     }
   }
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         email,
         password,
         options: {
-          emailRedirectTo: 'https://hagemaruxsby.github.io/money-tracker/index.html'
+          emailRedirectTo: 'https://hagemaruxsby.github.io/money-tracker/transactions.html'
         }
       });
       console.log('Sign up response:', data);
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setAuthMessage('Registration successful! Please check your email to confirm your account.', false);
     } catch (err) {
       console.error('Unexpected signUp error:', err);
-      setAuthMessage('An unexpected error occurred.');
+      setAuthMessage('An unexpected error occurred: ' + err.message);
       registerBtn.disabled = false;
     }
   }
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (session) {
       console.log('User is authenticated, redirecting to transactions.html');
-      window.location.href = '/money-tracker/transactions.html';
+      window.location.href = 'https://hagemaruxsby.github.io/money-tracker/transactions.html';
     }
   }
   checkSession();
